@@ -21,3 +21,17 @@ else
 dailyemploywage=0
 echo $dailyemploywage
 fi
+
+#UC3
+if [ "$employ" == "Present" ]
+then
+Employwageperhour=20
+worktime=8
+read -p "Enter the Employ name : " name
+partime=$(($worktime/2))
+parttimeemploywage=$(($Employwageperhour * $partime))
+echo "Wage of $name who does part time is : " $parttimeemploywage
+else
+parttimeemploywage=0
+echo "Wage of $name who does part time is : "$parttimeemploywage
+fi
