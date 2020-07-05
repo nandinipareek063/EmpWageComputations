@@ -37,6 +37,8 @@ echo "Wage of $name who does part time is : "$parttimeemploywage
 fi
 
 #UC4
+
+#UC5
 if [ "$employ" == "Present" ]
 then
 echo "1.Wages of the employ who does full time"
@@ -80,4 +82,11 @@ echo invalid choice
 ;;
 
 esac
+else
+wage=0
+echo "Wage of $name is : "$wage
+fi
 
+WorkingDaysofMonth=20
+wagesofamonth=$(($dailyemploywage*$WorkingDaysofMonth))
+echo "Wages Per Month of $name is : " $wagesofamonth
