@@ -178,3 +178,17 @@ fi
 
 
 
+#UC9
+ntotalwage=0
+read -p "Enter the number of days you want to work  : " days
+read -p "Enter how much hours you want to work in $days days: " hourss
+echo $days
+for((i=0; i<=20; i++))
+do
+checkifAvailable
+ntotalwage=$(($ntotalwage+$employ))
+declare -A dayss=( [day]="DAY [$i]"   [wages]="DAILY WAGE :: $employ"   [totalwage]="TOTAL WAGE :: $ntotalwage" )
+echo "WAGE IN  === " ${dayss[@]}
+done
+echo "Total wages of $name in $days days of work is : "$ntotalwage
+
