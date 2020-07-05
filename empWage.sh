@@ -37,8 +37,8 @@ echo "Wage of $name who does part time is : "$parttimeemploywage
 fi
 
 #UC4
-while true
-do
+if [ "$employ" == "Present" ]
+then
 echo "1.Wages of the employ who does full time"
 echo "2.Wages of the employ who does part time"
 echo "3.Exit"
@@ -63,7 +63,6 @@ case $ch in
 	
 	if [ "$employ" == "Present" ]
 	then	
-	read -p "Enter the name of the employ : " name
 	partworktime=$(($worktime/2))
 	parttimeemploywage=$(($Employwageperhour*$partworktime))
 	echo "Wage of $name for part time is : "$parttimeemploywage
@@ -73,7 +72,7 @@ case $ch in
 ;;
 
 "3")
-exit
+break
 ;;
 
 *) 
@@ -82,59 +81,3 @@ echo invalid choice
 
 esac
 
-
-
-#UC5
-
-
-WorkingDaysofMonth=20
-wagesofamonth=$(($dailyemploywage*$WorkingDaysofMonth))
-echo "Wages Per Month of $name is : " $wagesofamonth
-<<<<<<< HEAD
-
-
-
-#UC6
-dailyemploywage()
-{
-Employwageperhour=20
-dailyemploywage=$(($Employwageperhour * $hourss))
-}
-parttimeemploywage()
-{
-Employwageperhour=20
-partime=$(($hourss/2))
-parttimeemploywage=$(($Employwageperhour * $partime))
-}
-checkifAvailable() 
-{
-person=$(($RANDOM%3+1))
-if [ $person -eq 1 ]
-then
-dailyemploywage
-employ=$dailyemploywage
-elif [ $person -eq 2 ]
-then
-parttimeemploywage
-employ=$parttimeemploywage
-elif [ $person -eq 3 ]
-then
-employ=0
-fi
-}
-
-totalwage=0
-read -p "Enter the number of days you want to work  : " days
-read -p "Enter how much hours you want to work in $days days: " hourss
-echo $days
-for((i=0; i<=20; i++))
-do
-checkifAvailable
-day[$i]=$employ
-totalwage=$(($totalwage+${day[$i]}))
-echo day $i " = " ${day[$i]} " : " $totalwage
-done
-echo "Total wages of $name in $days days of work is : "$totalwage
-=======
-done
->>>>>>> UC5_CalWagesForMonth
