@@ -1,4 +1,5 @@
-echo "Welcome to Employee Wage Computation"
+echo "welcome to employee wage computation"
+
 #UC1
 Attendence=$(( $RANDOM % 2 + 1 ))
 if [ $Attendence -eq 1 ]
@@ -9,6 +10,7 @@ else
 employ="Absent"
 echo $employ
 fi
+
 
 #UC2
 if [ "$employ" == "Present" ]
@@ -21,8 +23,8 @@ else
 dailyemploywage=0
 echo $dailyemploywage
 fi
-
-#UC3
+ echo uc3
+#uc3
 if [ "$employ" == "Present" ]
 then
 Employwageperhour=20
@@ -37,7 +39,6 @@ echo "Wage of $name who does part time is : "$parttimeemploywage
 fi
 
 #UC4
-
 #UC5
 if [ "$employ" == "Present" ]
 then
@@ -92,17 +93,15 @@ wagesofamonth=$(($dailyemploywage*$WorkingDaysofMonth))
 echo "Wages Per Month of $name is : " $wagesofamonth
 
 
-
 #UC6
-read -p "Enter the name of the new employ to check the wages : " newname
-read -p "Enter the hours you work : " time
+time=100
 newworktime=0
 wages=0
-days=0
+days=20
 hoursleft=0
 dailyemploywages=160
 Employwageperhours=20
-i=1
+
 while [ $newworktime -lt $time ]
 do
 newworktime=$(($newworktime+1))
@@ -115,13 +114,16 @@ done
 hoursleft=$(($newworktime%8))
 totalwages=$((($hoursleft * $Employwageperhours) + $wages))
 echo "Total wages of $newname is : $totalwages "
+#echo "The days and hours work done is : $days days and $hoursleft hours "
+
 
 #UC7
+hourss=8
 dailyemploywage()
 {
 Employwageperhour=20
-hourss=8
 dailyemploywage=$(($Employwageperhour * $hourss))
+echo  $dailyemploywage
 }
 parttimeemploywage()
 {
@@ -144,9 +146,9 @@ elif [ $person -eq 3 ]
 then
 employ=0
 fi
-echo $person
 }
 
+#echo "The days and hours work done is : $days days and $hoursleft hours "
 
 #UC8
 dailyemploywage()
@@ -176,26 +178,29 @@ then
 employ=0
 fi
 }
-for((i=0; i<=20; i++))
-do
+
 totalwage=0
-days=20
+#read -p "Enter the number of days you want to work  : " days
+
+#echo $days
 for((i=0; i<=20; i++))
 do
 checkifAvailable
 day[$i]=$employ
 totalwage=$(($totalwage+${day[$i]}))
-echo day $i " = " ${day[$i]} " : " $totalwage
+echo $i " = " ${day[$i]} " : " $totalwage
+
 done
 echo "Total wages of $name in $days days of work is : "$totalwage
+
 #UC9
-totalwage=0
-days=20
+ntotalwage=0
+read -p "Enter the number of days you want to work  : " days
 for((i=0; i<=20; i++))
 do
 checkifAvailable
 ntotalwage=$(($ntotalwage+$employ))
-declare -A dayss=( [day]="DAY [$i]"   [wages]="DAILY WAGE :: $employ"   [totalwage]="TOTAL WAGE :: $ntotalwage" )
+declare -A dayss=( [day]="DAY [$i]"     [wages]="DAILY WAGE :: $employ"      [totalwage]="TOTAL WAGE :: $ntotalwage" )
 echo "WAGE IN  === " ${dayss[@]}
 done
 echo "Total wages of $name in $days days of work is : "$ntotalwage
