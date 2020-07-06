@@ -97,7 +97,7 @@ echo "Wages Per Month of $name is : " $wagesofamonth
 time=100
 newworktime=0
 wages=0
-days=20
+days=0
 hoursleft=0
 dailyemploywages=160
 Employwageperhours=20
@@ -113,7 +113,7 @@ fi
 done
 hoursleft=$(($newworktime%8))
 totalwages=$((($hoursleft * $Employwageperhours) + $wages))
-echo "Total wages of $newname is : $totalwages "
+echo "Total wages till 100 hours is : $totalwages "
 #echo "The days and hours work done is : $days days and $hoursleft hours "
 
 
