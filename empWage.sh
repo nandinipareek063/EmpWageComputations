@@ -183,7 +183,7 @@ totalwage=0
 #read -p "Enter the number of days you want to work  : " days
 
 #echo $days
-for((i=0; i<=20; i++))
+for((i=1; i<=20; i++))
 do
 checkifAvailable
 day[$i]=$employ
@@ -196,7 +196,7 @@ echo "Total wages of $name in $days days of work is : "$totalwage
 #UC9
 ntotalwage=0
 read -p "Enter the number of days you want to work  : " days
-for((i=0; i<=20; i++))
+for((i=1; i<=20; i++))
 do
 checkifAvailable
 ntotalwage=$(($ntotalwage+$employ))
