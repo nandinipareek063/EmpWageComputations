@@ -120,6 +120,7 @@ echo "Total wages of $newname is : $totalwages "
 dailyemploywage()
 {
 Employwageperhour=20
+hourss=8
 dailyemploywage=$(($Employwageperhour * $hourss))
 }
 parttimeemploywage()
@@ -143,6 +144,7 @@ elif [ $person -eq 3 ]
 then
 employ=0
 fi
+echo $person
 }
 
 
@@ -174,6 +176,14 @@ then
 employ=0
 fi
 }
+for((i=0; i<=20; i++))
+do
+checkifAvailable
+day[$i]=$employ
+totalwage=$(($totalwage+${day[$i]))
+echo  ${day[$i]    $totalwage
+done
+
 
 #UC9
 totalwage=0
@@ -184,7 +194,6 @@ for((i=0; i<=20; i++))
 do
 checkifAvailable
 day[$i]=$employ
-totalwage=$(($totalwage+${day[$i]}))
+totalwage=$(($totalwage+${day[$i]))
 echo day $i " = " ${day[$i]} " : " $totalwage
 done
-echo "Total wages of $name in $days days of work is : "$totalwage
