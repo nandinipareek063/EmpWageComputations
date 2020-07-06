@@ -178,22 +178,24 @@ fi
 }
 for((i=0; i<=20; i++))
 do
-checkifAvailable
-day[$i]=$employ
-totalwage=$(($totalwage+${day[$i]))
-echo  ${day[$i]    $totalwage
-done
-
-
-#UC9
 totalwage=0
-read -p "Enter the number of days you want to work  : " days
-read -p "Enter how much hours you want to work in $days days: " hourss
-echo $days
+days=20
 for((i=0; i<=20; i++))
 do
 checkifAvailable
 day[$i]=$employ
-totalwage=$(($totalwage+${day[$i]))
+totalwage=$(($totalwage+${day[$i]}))
 echo day $i " = " ${day[$i]} " : " $totalwage
 done
+echo "Total wages of $name in $days days of work is : "$totalwage
+#UC9
+totalwage=0
+days=20
+for((i=0; i<=20; i++))
+do
+checkifAvailable
+ntotalwage=$(($ntotalwage+$employ))
+declare -A dayss=( [day]="DAY [$i]"   [wages]="DAILY WAGE :: $employ"   [totalwage]="TOTAL WAGE :: $ntotalwage" )
+echo "WAGE IN  === " ${dayss[@]}
+done
+echo "Total wages of $name in $days days of work is : "$ntotalwage
