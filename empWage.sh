@@ -115,7 +115,6 @@ done
 hoursleft=$(($newworktime%8))
 totalwages=$((($hoursleft * $Employwageperhours) + $wages))
 echo "Total wages of $newname is : $totalwages "
-echo "The days and hours work done is : $days days and $hoursleft hours "
 
 #UC7
 dailyemploywage()
