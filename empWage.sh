@@ -121,6 +121,7 @@ echo "The days and hours work done is : $days days and $hoursleft hours "
 dailyemploywage()
 {
 Employwageperhour=20
+hourss=8
 dailyemploywage=$(($Employwageperhour * $hourss))
 }
 parttimeemploywage()
